@@ -1,13 +1,11 @@
+@use './shared/variables.scss' as v;
+
 .main{
     min-height: 100vh;
     width: 100vw;
     display: flex;
-
-}
-.side-menu{
-    background-color: blue;
 }
 .content{
-    background-color: red;
+    background-color: v.$secondary-container-light;
     flex: 1;
 }

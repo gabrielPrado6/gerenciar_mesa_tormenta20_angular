@@ -15,7 +15,11 @@
     <div class="router">
 
         @for (botao of listaBotoes; track botao) {
-            <div class="botao-menu-lateral py-2" (click)="moverRota(botao.rota)">
+            <div 
+                class="botao-menu-lateral py-2" 
+                (click)="moverRota(botao.rota)"
+                [attr.selected]="validaRota(botao.rota)"
+            >
                 <button 
                     class="custom-fab"
                     aria-label="Example icon button with a delete icon"

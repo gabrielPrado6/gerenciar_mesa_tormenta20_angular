@@ -1,10 +1,11 @@
-@use '../variables.scss' as variables;
+@use '../variables.scss' as v;
 
 .menu-lateral{
     display: flex;
     flex-flow: column;
     max-width: 80px;
     height: 100vh;
+    background-color: v.$primary-color;
 
     .serch{
         display: flex;
@@ -19,24 +20,33 @@
         align-items: center;
         text-align: center;
         cursor: pointer;
+
+        &[selected] {
+            .custom-fab {
+                border-radius: 50px;
+                min-width: 56px;
+                background-color: v.$secondary-container !important; // Substitua pelo seu código de cor
+                color: v.$font-color-secondary !important; // Altere a cor do ícone/texto se necessário
+            }
+        }
         
         .custom-fab {
             border: 0;
-            background-color: variables.$transparent !important; // Substitua pelo seu código de cor
-            color: variables.$font-color-secondary-light !important;
+            background-color: v.$transparent !important; // Substitua pelo seu código de cor
+            color: v.$font-color-secondary-light !important;
 
             & :hover,
             & :active,
             & :focus{
                 border-radius: 50px;
                 min-width: 56px;
-                background-color: variables.$secondary-container !important; // Substitua pelo seu código de cor
-                color: variables.$font-color-secondary !important; // Altere a cor do ícone/texto se necessário
+                background-color: v.$secondary-container !important; // Substitua pelo seu código de cor
+                color: v.$font-color-secondary !important; // Altere a cor do ícone/texto se necessário
             }
         }
 
         span{
-            color: variables.$font-color-secondary-light;
+            color: v.$font-color-secondary-light;
         }
     }
 }
