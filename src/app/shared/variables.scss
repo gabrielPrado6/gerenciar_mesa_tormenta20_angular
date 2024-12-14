@@ -1,0 +1,141 @@
+@use "sass:map";
+
+// Variáveis de estilo global
+$font-family: 'Roboto', sans-serif;
+$font-size-base: 16px;
+$font-color: #333;
+$line-height: 1.5;
+
+// Variaveis de tamanho global
+$px-1: 2px;
+$px-2: 4px;
+$px-3: 8px;
+$px-4: 12px;
+$px-5: 16px;
+$px-6: 18px;
+$px-7: 20px;
+$px-8: 28px;
+$px-9: 32px;
+$px-10: 64px;
+$px-11: 128px;
+
+$px-values: (
+  1: $px-1,
+  2: $px-2,
+  3: $px-3,
+  4: $px-4,
+  5: $px-5,
+  6: $px-6,
+  7: $px-7,
+  8: $px-8,
+  9: $px-9,
+  10: $px-10,
+  11: $px-11
+);
+
+//Cores
+$primary-color:#AB322B;
+$primary-container: #FFE1DD;
+$secondary-container: #F9F7C2;
+$font-color-tertiary: #31111D;
+$font-color-secondary: #2B2A19;
+$font-color-secondary-light: #F9F7C2;
+$transparent: #00000000;
+
+// Estilos globais
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  color: $font-color;
+  line-height: $line-height;
+}
+
+.text-small {
+  font-size: 0.75 * $font-size-base; /* 12px */
+}
+
+.text-large {
+  font-size: 1.25 * $font-size-base; /* 20px */
+}
+
+.text-primary {
+  color: #1976d2; /* Azul padrão */
+}
+
+// Definindo o mixin para margens
+@mixin margin-horizontal($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+@mixin margin-vertical($value) {
+  margin-top: $value;
+  margin-bottom: $value;
+}
+
+@mixin margin($value) {
+  margin-top: $value;
+  margin-bottom: $value;
+  margin-left: $value;
+  margin-right: $value;
+}
+
+
+// Loop para margens
+@for $i from 1 through 11 {
+  .mt-#{$i} { margin-top: map.get($px-values, $i); }
+  .mb-#{$i} { margin-bottom:  map.get($px-values, $i); }
+  .ml-#{$i} { margin-left:  map.get($px-values, $i); }
+  .mr-#{$i} { margin-right:  map.get($px-values, $i); }
+
+  .mx-#{$i} {
+    @include margin-horizontal( map.get($px-values, $i));
+  }
+  .my-#{$i} {
+    @include margin-vertical( map.get($px-values, $i));
+  }
+
+  .m-#{$i} {
+    @include margin( map.get($px-values, $i));
+  }
+}
+
+
+// Definindo o mixin para padding
+@mixin padding-horizontal($value) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+@mixin padding-vertical($value) {
+  padding-top: $value;
+  padding-bottom: $value;
+}
+
+@mixin padding($value) {
+  padding-top: $value;
+  padding-bottom: $value;
+  padding-left: $value;
+  padding-right: $value;
+}
+
+
+// Loop para padding 
+@for $i from 1 through 11 {
+  .pt-#{$i} { padding-top:  map.get($px-values, $i); }
+  .pb-#{$i} { padding-bottom:  map.get($px-values, $i); }
+  .pl-#{$i} { padding-left:  map.get($px-values, $i); }
+  .pr-#{$i} { padding-right:  map.get($px-values, $i); }
+
+  .px-#{$i} {
+    @include padding-horizontal( map.get($px-values, $i));
+  }
+
+  .py-#{$i} {
+    @include padding-vertical( map.get($px-values, $i));
+  }
+
+  .p-#{$i} {
+    @include padding( map.get($px-values, $i));
+  }
+}

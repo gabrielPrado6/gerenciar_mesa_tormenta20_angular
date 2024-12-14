@@ -1,0 +1,35 @@
+<div class="menu-lateral">
+    <div class="serch">
+        <button 
+            mat-fab
+            class="custom-fab"
+            aria-label="Example icon button with a delete icon"
+        >
+            <mat-icon 
+                aria-hidden="false" 
+                aria-label="Example home icon" 
+                class="material-symbols-outlined py-2"
+            >search</mat-icon>
+        </button>
+    </div>
+    <div class="router">
+
+        @for (botao of listaBotoes; track botao) {
+            <div class="botao-menu-lateral py-2" (click)="moverRota(botao.rota)">
+                <button 
+                    class="custom-fab"
+                    aria-label="Example icon button with a delete icon"
+                >
+                    <mat-icon 
+                        aria-hidden="false" 
+                        aria-label="Example home icon" 
+                        class="material-symbols-outlined py-2"
+                    >{{botao.icone}}</mat-icon>
+                </button>
+    
+                <span class="my-3">{{botao.texto}}</span>
+            </div>
+        }
+    </div>
+</div>
+

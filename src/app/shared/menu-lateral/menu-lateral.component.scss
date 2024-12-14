@@ -1,0 +1,42 @@
+@use '../variables.scss' as variables;
+
+.menu-lateral{
+    display: flex;
+    flex-flow: column;
+    max-width: 80px;
+    height: 100vh;
+
+    .serch{
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+        align-items: center;
+    }
+    
+    .botao-menu-lateral{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        
+        .custom-fab {
+            border: 0;
+            background-color: variables.$transparent !important; // Substitua pelo seu código de cor
+            color: variables.$font-color-secondary-light !important;
+
+            & :hover,
+            & :active,
+            & :focus{
+                border-radius: 50px;
+                min-width: 56px;
+                background-color: variables.$secondary-container !important; // Substitua pelo seu código de cor
+                color: variables.$font-color-secondary !important; // Altere a cor do ícone/texto se necessário
+            }
+        }
+
+        span{
+            color: variables.$font-color-secondary-light;
+        }
+    }
+}
