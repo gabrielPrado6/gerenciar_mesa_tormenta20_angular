@@ -49,7 +49,6 @@ export class MenuLateralComponent implements OnInit, OnDestroy {
   }
 
   validaRota(rota:string){
-    debugger
     if(this.currentUrl.includes(rota)) 
       return true
     return  null

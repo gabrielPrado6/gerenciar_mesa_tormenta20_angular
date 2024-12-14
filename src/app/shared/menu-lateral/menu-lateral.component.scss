@@ -6,6 +6,10 @@
     max-width: 80px;
     height: 100vh;
     background-color: v.$primary-color;
+    
+    // position: fixed; /* Fixa o menu na tela */
+    // top: 0; /* Posiciona no topo da tela */
+    // left: 0; /* Alinha à esquerda */
 
     .serch{
         display: flex;
